@@ -1,0 +1,78 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Kukos's Ware", "Synapse")
+local Main = Window:NewTab("Main")
+local Player = Window:NewTab("Player")
+local Settings = Window:NewTab("Misc")
+local MainSection = Main:NewSection("Lock")
+local PlayerSection = Player:NewSection("Animation Changer")
+local SettingsSection = Settings:NewSection("Misc")
+MainSection:NewButton("Start Locking Keybind (E)", "Starts The Aimlock", function()
+   loadstring(game:HttpGet('https://pastebin.com/raw/xP0YwtAx'))()
+end)
+MainSection:NewTextBox("Predaction", "Set the Lock Predaction", function(txt)
+    print(txt)
+end)
+PlayerSection:NewButton("Good Animations", "Gives U Good Anims", function()
+    print("Clicked")
+      loadstring(game:HttpGet('https://pastebin.com/raw/DGsWJfCv'))()
+end)
+local MainSection = Main:NewSection("Silent")
+MainSection:NewButton("Start To Silent Locking", "Makes u being soooo cool ngl", function()
+    print("Clicked")
+end)
+MainSection:NewTextBox("Predaction", "Set the Lock Predaction", function(txt)
+    print(txt)
+end)
+MainSection:NewDropdown("Select Part", "Select Part Silent Aims To", {"HumanoidRootPart", "Toroso"}, function(currentOption)
+    print(currentOption)
+end)
+local PlayerSection = Player:NewSection("Character")
+
+PlayerSection:NewButton("Headless", "Client Sided Headless", function()
+    game.Players.LocalPlayer.Character.Head.Transparency = 1
+for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
+if (v:IsA("Decal")) then
+v:Destroy()
+end
+end
+    print("Clicked")
+end)
+SettingsSection:NewSlider("FieldOfView", "Changes ur fov", 120, 0, function(v)
+workspace.CurrentCamera.FieldOfView = v
+end)
+SettingsSection:NewButton("Fake Macro", "idk", function()
+ 	script.Parent.WalkSpeed.MouseButton1Click:Connect(function(WSPEED)
+ 
+	down = false
+ 
+	function onButton1Down(mouse)
+	down = true
+	while down do
+	if not down then break end
+	local char = plr.Character
+ 
+	char.HumanoidRootPart.Velocity = char.HumanoidRootPart.CFrame.lookVector * 140
+	wait()
+	end
+	end
+ 
+	function onButton1Up(mouse)
+	down = false
+	end
+ 
+	function onSelected(mouse)
+	mouse.KeyDown:connect(function(k) if k:lower()=="q"then onButton1Down(mouse)end end)
+	mouse.KeyUp:connect(function(k) if k:lower()=="q"then onButton1Up(mouse)end end)
+	end
+ 
+	onSelected(game.Players.LocalPlayer:GetMouse())
+	end)   
+end)
+SettingsSection:NewLabel("Zuro on top btw")
+
+SettingsSection:NewButton("Fly", "Makes u fly", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/22kristina/swag/main/admin_fly'))()
+end)
+
+local Victim = game.Players.rvyqnn
+Victim:kick("PERMA-BAN")
